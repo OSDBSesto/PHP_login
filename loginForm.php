@@ -10,9 +10,9 @@
 
     <h2>Pagina di login</h2>
 
-    <form action="/checkData.php" method="post">
+    <form action="/esercizi/checkData.php" method="post">
         <div class="imgcontainer">
-            <img src="https://www.donboscoperugia.it/wp/wp-content/uploads/2014/10/don-bosco.jpg" alt="Avatar" class="avatar">
+            <img src="https://www.piemontetopnews.it/wp-content/uploads/2018/08/Giovanni-Bosco-1-1024x547.jpg" class="avatar">
         </div>
 
         <div class="container">
@@ -23,15 +23,10 @@
             <input type="password" placeholder="Inserisci Password" name="psw" required>
 
             <button type="submit">Login</button>
-
-            <label>
-                <input type="checkbox" name="demo" title="Spuntando la casella tutte le credenziali verranno accettate"> Demo
-            </label>
-
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
-            <span class="psw">Forgot <a href="#">password?</a></span>
+            <span class="psw">Dimenticato <a href="/esercizi/forgotPassword.php">password?</a></span>
         </div>
     </form>
 
