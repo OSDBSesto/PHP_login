@@ -16,6 +16,7 @@
         </div>
 
         <div class="container">
+            
             <label for="username"><b>Username</b></label>
 
             <input type="text" placeholder="Inserisci Username" name="username" required> <!-- Stile definito uguale a PSW -->
