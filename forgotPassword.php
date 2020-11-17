@@ -16,7 +16,7 @@ if (isset($_POST["username"])) {
 
 <body>
     <h1>Pagina recupero credenziali</h1>
-    <form action="/esercizi/forgotPassword.php" method="post">
+    <form action="forgotPassword.php" method="post">
         <div class="imgcontainer">
             <img src="https://www.piemontetopnews.it/wp-content/uploads/2018/08/Giovanni-Bosco-1-1024x547.jpg" class="avatar">
         </div>
@@ -41,13 +41,13 @@ if (isset($_POST["username"])) {
                     echo "<img src=\"https://roundhouse-assets.s3.amazonaws.com/assets/Image/15214-fitandcrop-1200x681.jpg\" class =\"avatar\">";
                     echo "<h2 style=\"color:orange\">Utente non trovato!</h4>";
                     echo "</div><div class=\"container\" style=\"background-color:#f1f1f1\"";
-                    echo "<span class=\"psw\">Torna al <a href=\"/esercizi/forgotPassword.php\">recupero credenziali</a></span></div><br><div>";
+                    echo "<span class=\"psw\">Torna al <a href=\"forgotPassword.php\">recupero credenziali</a></span></div><br><div>";
                 }
             }
             ?>
         </div>
         <div class="container" style="background-color:#f1f1f1">
-            <span class="psw">Torna a <a href="/esercizi/loginForm.php">login</a></span>
+            <span class="psw">Torna a <a href="loginForm.php">login</a></span>
         </div>
     </form>
 </body>
