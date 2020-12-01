@@ -5,7 +5,7 @@ echo "Ciao " . $_COOKIE["user"] . "!</br>";
 echo "visite: " . $_COOKIE["sessione"] . "</br>";
 
 $path = "voti.txt";
-$voti;
+
 if ($file = fopen($path, "r")) {
     while (!feof($file)) {
         $line = fgets($file);
@@ -18,7 +18,8 @@ if ($file = fopen($path, "r")) {
         }
         if ($user == $loggedUser) {
             $voti = substr($line, strpos($line, ":") + 1, strlen($line));
-            break;
+            $arrayVoti = explode(';', $voti);    
+        break;
         }
     }
     fclose($file);
@@ -43,6 +44,15 @@ if ($file = fopen($path, "r")) {
             if (isset($_COOKIE["user"])) {
                 echo "<div class=\"container\"><h2>Benvenuto nella tua area dedicata, </h2>";
                 echo "<h1 style=\"color:green\">" . $_COOKIE["user"] . "</h1>";
+                echo "<table><tr><th>Voto</th></tr>";
+                foreach($arrayVoti as $voto){
+                    echo "<tr>";
+                    echo "<td>";
+                    echo $voto;
+                    echo "</td>";
+                    echo "</tr>";
+                }                
+                echo "</table>";
                 echo "<h2 style=\"color:orange\">Voti: " . $voti . "</h4>";
                 echo "</div>";
             } else {
