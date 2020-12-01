@@ -15,7 +15,7 @@ print_r($_COOKIE);
 echo "<br/>";
 
 if (isset($_COOKIE["user"])) {
-    header("Location: checkData.php");    
+    header("Location: home.php");    
     //echo "Ciao " . $_COOKIE["user"] . "!";
     //setcookie("nome", "", time()-3600);
 } else {
@@ -37,7 +37,7 @@ setcookie("sessione", $_SESSION["visite"], time() + (60 * 60));
 
     <h2>Pagina di login</h2>
 
-    <form action="checkData.php" method="post">
+    <form action="home.php" method="post">
         <div class="imgcontainer">
             <img src="https://www.piemontetopnews.it/wp-content/uploads/2018/08/Giovanni-Bosco-1-1024x547.jpg" class="avatar">
         </div>
