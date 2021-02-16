@@ -1,11 +1,11 @@
 <?php
-$path = "scriptCredenziali.php";
-include($path);
+include("scriptcredenziali.php");
 echo "Ciao " . $_COOKIE["user"] . "!</br>";
 echo "visite: " . $_COOKIE["sessione"] . "</br>";
 
 $path = "voti.txt";
 
+// popolo l'array di voti dell'utente
 if ($file = fopen($path, "r")) {
     while (!feof($file)) {
         $line = fgets($file);
@@ -44,7 +44,7 @@ if ($file = fopen($path, "r")) {
             if (isset($_COOKIE["user"])) {
                 echo "<div class=\"container\"><h2>Benvenuto nella tua area dedicata, </h2>";
                 echo "<h1 style=\"color:green\">" . $_COOKIE["user"] . "</h1>";
-                echo "<table><tr><th>Voto</th></tr>";
+                echo "<table><tr><th>Voti</th></tr>";
                 foreach($arrayVoti as $voto){
                     echo "<tr>";
                     echo "<td>";
@@ -53,15 +53,21 @@ if ($file = fopen($path, "r")) {
                     echo "</tr>";
                 }                
                 echo "</table>";
-                echo "<h2 style=\"color:orange\">Voti: " . $voti . "</h4>";
-                echo "</div>";
             } else {
-                if (isset($_CREDENZIALI[$_POST["username"]])) {
-                    if ($_POST["psw"] == $_CREDENZIALI[$_POST["username"]]) {
+                if (isset($_pwd[$_POST["username"]])) {
+                    if ($_POST["psw"] == $_pwd[$_POST["username"]]) {
                         setcookie("user", $_POST["username"], time() + (60 * 60));
                         echo "<div class=\"container\"><h2>Benvenuto nella tua area dedicata, </h2>";
                         echo "<h1 style=\"color:green\">" . $_POST["username"] . "</h1>";
-                        echo "<h2 style=\"color:orange\">Voti: " . $voti . "</h4>";
+                        echo "<table><tr><th>Voti</th></tr>";
+                        foreach($arrayVoti as $voto){
+                            echo "<tr>";
+                            echo "<td>";
+                            echo $voto;
+                            echo "</td>";
+                            echo "</tr>";
+                        }                
+                        echo "</table>";
                         echo "</div>";
                     } else {
                         echo "<img src=\"https://i0.wp.com/vincenttechblog.com/wp-content/uploads/2018/02/lock-pc-wrong-password.jpg?ssl=1\" class =\"avatar\">";
